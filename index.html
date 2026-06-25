@@ -365,6 +365,12 @@ function buildGallery() {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
 
+  // Shuffle photos randomly
+  for (let i = PHOTOS.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [PHOTOS[i], PHOTOS[j]] = [PHOTOS[j], PHOTOS[i]];
+  }
+
   PHOTOS.forEach(([url, cat]) => {
     const item = document.createElement('div');
     item.className = 'masonry-item';
