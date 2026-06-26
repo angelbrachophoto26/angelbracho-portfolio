@@ -14,7 +14,7 @@
   body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-weight: 300; overflow-x: hidden; }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: linear-gradient(to bottom, rgba(8,8,8,0.97) 0%, transparent 100%); }
   .nav-logo { display: flex; flex-direction: column; gap: 2px; }
-  .nav-logo img { height: 64px; width: auto; mix-blend-mode: multiply; }
+  .nav-logo img { height: 80px; width: auto; mix-blend-mode: multiply; }
   .nav-domain { font-size: 10px; letter-spacing: 0.18em; color: var(--cyan); text-transform: uppercase; }
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a { color: var(--grey); text-decoration: none; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.2s; }
@@ -130,6 +130,25 @@
     width: 100%; height: 100%;
     border: none;
   }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    padding: 0 4px;
+  }
+  .video-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #111;
+    overflow: hidden;
+  }
+  .video-item iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
   @media(max-width: 768px) {
     .video-grid { grid-template-columns: 1fr; }
     .portfolio-tabs { padding: 0 16px; }
@@ -196,7 +215,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img class="hero-logo" src="https://res.cloudinary.com/dj18lp4e1/image/upload/v1781887071/t_g9l4ec.png" alt="Angel Bracho Photo">
-    <p class="hero-tagline">Fotografía & Video · <span>España</span></p>
+    <p class="hero-tagline">Pintando con luz, frame a frame. · <span>Foto & Video</span></p>
   </div>
   <div class="hero-scroll">scroll</div>
 </section>
@@ -256,6 +275,18 @@
       </div>
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/17AjuGJuRSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item" style="padding-bottom:177.78%">
+        <iframe src="https://www.youtube.com/embed/F-fUjYIJMWQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item" style="padding-bottom:177.78%">
+        <iframe src="https://www.youtube.com/embed/OKDI3i5YVU8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item" style="padding-bottom:177.78%">
+        <iframe src="https://www.youtube.com/embed/deGLfKfmdpY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item" style="padding-bottom:56.25%">
+        <iframe src="https://www.youtube.com/embed/UOnKBwvOAYY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
