@@ -82,8 +82,35 @@
   footer { padding: 32px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #111; font-size: 11px; color: #444; letter-spacing: 0.1em; }
   footer a { color: #444; text-decoration: none; } footer a:hover { color: var(--cyan); }
 
-  /* VIDEO SECTION */
-  .video-section { padding: 80px 0; }
+
+  /* PORTFOLIO TABS */
+  .portfolio-tabs {
+    display: flex;
+    gap: 0;
+    padding: 0 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #222;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--grey);
+    padding: 12px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+  }
+  .tab-btn:hover { color: var(--white); }
+  .tab-btn.active { color: var(--cyan); border-bottom-color: var(--cyan); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* VIDEO GRID */
   .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -105,7 +132,10 @@
   }
   @media(max-width: 768px) {
     .video-grid { grid-template-columns: 1fr; }
+    .portfolio-tabs { padding: 0 16px; }
+    .tab-btn { padding: 12px 20px; }
   }
+
 
   @keyframes floatIn { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
@@ -186,66 +216,50 @@
   </div>
 </section>
 
-<section class="gallery-section" id="portfolio">
-  <div class="gallery-header reveal">
+<section id="portfolio" style="padding: 80px 0;">
+  <div style="padding: 0 32px 32px;">
     <p class="section-label">Trabajo</p>
     <h2 class="section-title">Portfolio</h2>
   </div>
-  <div class="category-nav">
-    <button class="cat-btn active" data-cat="all">Todos</button>
-    <button class="cat-btn" data-cat="CONCIERTOS">Conciertos</button>
-    <button class="cat-btn" data-cat="GASTRONOMIA">Gastronomía</button>
-    <button class="cat-btn" data-cat="RETRATOS-MODA">Retratos & Moda</button>
-    <button class="cat-btn" data-cat="BODAS">Bodas</button>
-    <button class="cat-btn" data-cat="EVENTOS-CULTURA">Eventos & Cultura</button>
-    <button class="cat-btn" data-cat="DEPORTES-ACCION">Deportes</button>
+
+  <!-- Tab buttons -->
+  <div class="portfolio-tabs">
+    <button class="tab-btn active" data-tab="fotos">Fotos</button>
+    <button class="tab-btn" data-tab="video">Video</button>
   </div>
-  <div class="masonry" id="gallery"></div>
-</section>
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lbClose">✕</button>
-  <button class="lightbox-prev" id="lbPrev">‹</button>
-  <img id="lbImg" src="" alt="">
-  <button class="lightbox-next" id="lbNext">›</button>
-</div>
-
-
-<section class="video-section reveal" id="video">
-  <div style="padding: 0 32px 40px;">
-    <p class="section-label">En movimiento</p>
-    <h2 class="section-title">Video</h2>
+  <!-- FOTOS TAB -->
+  <div class="tab-content active" id="tab-fotos">
+    <div class="category-nav">
+      <button class="cat-btn active" data-cat="all">Todos</button>
+      <button class="cat-btn" data-cat="CONCIERTOS">Conciertos</button>
+      <button class="cat-btn" data-cat="GASTRONOMIA">Gastronomía</button>
+      <button class="cat-btn" data-cat="RETRATOS-MODA">Retratos & Moda</button>
+      <button class="cat-btn" data-cat="BODAS">Bodas</button>
+      <button class="cat-btn" data-cat="EVENTOS-CULTURA">Eventos & Cultura</button>
+      <button class="cat-btn" data-cat="DEPORTES-ACCION">Deportes</button>
+    </div>
+    <div class="masonry" id="gallery"></div>
   </div>
-  <div class="video-grid">
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/pZmuGJq6qvA" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/rWgW0M2EQys" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/-96_NGm_m_I" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/17AjuGJuRSE" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+
+  <!-- VIDEO TAB -->
+  <div class="tab-content" id="tab-video">
+    <div class="video-grid">
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/pZmuGJq6qvA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/rWgW0M2EQys" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/-96_NGm_m_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/17AjuGJuRSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
+
 </section>
 
 <section class="services" id="servicios">
@@ -512,10 +526,13 @@ function buildGallery() {
     document.body.style.overflow = 'hidden';
   });
 
-  document.getElementById('lbClose').addEventListener('click', () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; });
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }});
-  document.getElementById('lbNext').addEventListener('click', () => { const v = getVisible(); currentIdx=(currentIdx+1)%v.length; lbImg.src=v[currentIdx].querySelector('img').src; });
-  document.getElementById('lbPrev').addEventListener('click', () => { const v = getVisible(); currentIdx=(currentIdx-1+v.length)%v.length; lbImg.src=v[currentIdx].querySelector('img').src; });
+  const lbClose = document.getElementById('lbClose');
+  const lbNext = document.getElementById('lbNext');
+  const lbPrev = document.getElementById('lbPrev');
+  if (lbClose) lbClose.addEventListener('click', () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; });
+  if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }});
+  if (lbNext) lbNext.addEventListener('click', () => { const v = getVisible(); currentIdx=(currentIdx+1)%v.length; lbImg.src=v[currentIdx].querySelector('img').src; });
+  if (lbPrev) lbPrev.addEventListener('click', () => { const v = getVisible(); currentIdx=(currentIdx-1+v.length)%v.length; lbImg.src=v[currentIdx].querySelector('img').src; });
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key==='Escape') { lightbox.classList.remove('open'); document.body.style.overflow=''; }
@@ -530,6 +547,17 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 buildGallery();
+
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
 </script>
 </body>
 </html>
