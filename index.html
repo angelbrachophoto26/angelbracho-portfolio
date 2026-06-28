@@ -216,7 +216,36 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg" id="heroBg"></div>
+<script>
+  var heroPhotos = [
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/_OSR0267.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/_OSR5701.JPG',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/_OSR7150.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/0N3A2923.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/6S7A1282.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/6S7A6415.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/05022021-5N9A3255.JPG',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/05022021-5N9A3380.JPG',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/13032021-ADEURI%20PRO_9999_137-Editar.JPG',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/506533725_10171882764650048_8329816483787179934_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/506611716_10171882764865048_8609734074873559661_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/511160635_10171939186870048_1383187923502426655_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/513773604_10172014721730048_4260056812509313330_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/517244641_10172122024770048_5727188534302024062_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/518381235_10172149019415048_2299784936211416722_n.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/BODA%20KYLE%20Y%20ANGELINE_9999_220.JPG',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/CARNAVAL%20DE%20CABARETE_9999_89JANE%20PHOTO%20WEDDING.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/IMG_5849.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/IMG_5856.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/IMG_5861.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/IMG_5864.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/IMG_5870.jpg',
+    'https://raw.githubusercontent.com/angelbrachophoto26/angelbracho-portfolio/main/HERO/WEDDING%20CANON%205D%202_9999_4.JPG'
+  ];
+  var randomPhoto = heroPhotos[Math.floor(Math.random() * heroPhotos.length)];
+  document.getElementById('heroBg').style.backgroundImage = 'url(' + randomPhoto + ')';
+</script>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img class="hero-logo" src="https://res.cloudinary.com/dj18lp4e1/image/upload/v1781887071/t_g9l4ec.png" alt="Angel Bracho Photo">
